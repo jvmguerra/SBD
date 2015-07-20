@@ -150,6 +150,19 @@ CREATE TABLE REALIZA (
 
 );
 
+ALTER TABLE PLANO DROP COLUMN Fixo_numero;
+ALTER TABLE PLANO DROP COLUMN Movel_numero;
+
+CREATE TABLE ASSINA(
+        CPF_Cliente varchar(11),
+        Nro_Plano integer,
+	Fixo_Numero varchar(15),
+	Movel_Numero varchar(15),
+        CONSTRAINT assina_pk PRIMARY KEY (CPF_Cliente, Nro_Plano),
+	CONSTRAINT assina_fk FOREIGN KEY (CPF_Cliente) REFERENCES Cliente(CPF),
+	CONSTRAINT assina_fk1 FOREIGN KEY (Nro_plano) REFERENCES Plano(Nro_plano)
+);
+
 
 
 
