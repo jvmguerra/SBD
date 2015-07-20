@@ -1,0 +1,20 @@
+INSERT INTO Empresa VALUES ('49.184.261/0001-06', 'Setor Administrativo','Rua Amazônia','69900365','Rio de Janeiro','Brasil','99911428')
+INSERT INTO Empresa VALUES ('54.513.545/0001-20', 'Setor Financeiro','Rua Antônio Rocha Viana','69908560','Rio de Janeiro','Brasil','99780165')
+INSERT INTO Empresa VALUES ('44.819.446/0001-18', 'RH','Alameda Barcelona','69911250','Rio de Janeiro','Brasil','99783558')
+INSERT INTO Empresa VALUES ('43.106.552/0001-91', 'Setor Tecnico','Rua Boa Vista','69910710','Rio de Janeiro','Brasil','5710605')
+INSERT INTO Empresa VALUES ('63.518.315/0001-45', 'Comercial','Rua Campo do Rio Branco','69910070','Rio de Janeiro','Brasil','2087669')
+INSERT INTO Empresa VALUES ('57.633.717/0001-98', 'Comercial 2','Rua Cruzeiro do Sul','69903430','Rio de Janeiro','Brasil','2883804')
+INSERT INTO Empresa VALUES ('52.688.531/0001-12', 'Comercial 3','Rua Cunha Matos','69901170','Uberlândia','Brasil','2081713')
+INSERT INTO Empresa VALUES ('94.860.585/0001-63', 'Setor Executivo','Rua Olivério José de Almeida','75106350','Uberlândia','Brasil','5757474')
+INSERT INTO Empresa VALUES ('21.515.052/0001-70', 'Sede','Rua Teodora de Mello','75106355','Rio de Janeiro','Brasil','2880091')
+INSERT INTO Empresa VALUES ('71.414.084/0001-58', 'Setor Tecnico','Rua I 4','75050720','Uberlândia','Brasil','2081444')
+
+
+
+
+
+
+
+
+
+
