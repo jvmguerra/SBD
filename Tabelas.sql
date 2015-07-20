@@ -163,6 +163,9 @@ CREATE TABLE ASSINA(
 	CONSTRAINT assina_fk1 FOREIGN KEY (Nro_plano) REFERENCES Plano(Nro_plano)
 );
 
+ALTER TABLE PLANO ALTER COLUMN Movel_LimiteInternet SET DATA TYPE varchar(10);
+ALTER TABLE PLANO ALTER COLUMN internet_velocidade SET DATA TYPE varchar(10);
+
 
 
 
