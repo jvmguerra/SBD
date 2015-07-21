@@ -122,15 +122,18 @@ CREATE TABLE PAGAMENTO(
 	CONSTRAINT pagamento_fk2 FOREIGN KEY (Conta) REFERENCES CONTA(Id_conta) ON DELETE CASCADE
 
 );
-
+CREATE SEQUENCE Nro_agendamento_seq;
+CREATE TABLE SERVICO(
+	Nro_servico integer DEFAULT nextval('Nro_servico_seq'),
 CREATE TABLE AGENDA_MANUTENCAO(
+	Nro_agendamento integer DEFAULT nextval('Nro_agendamento_seq'),
 	Servico_id integer,
 	Cliente_cpf varchar,
 	Data_agendamento date,
 	Data_concretizacao date,
 	Funcionario_agendamento integer,
 
-	CONSTRAINT agendaman_pk PRIMARY KEY (Servico_id),
+	CONSTRAINT agendaman_pk PRIMARY KEY (Nro_agendamento),
 	CONSTRAINT agendaman_fk1 FOREIGN KEY (Servico_id) REFERENCES SERVICO(Nro_Servico) ON DELETE CASCADE, 
 	CONSTRAINT agendaman_fk2 FOREIGN KEY (Cliente_cpf) REFERENCES CLIENTE(CPF) ON DELETE CASCADE,
 	CONSTRAINT agendaman_fk3 FOREIGN KEY (Funcionario_agendamento) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE 
