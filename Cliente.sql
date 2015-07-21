@@ -18,39 +18,3 @@ INSERT INTO Cliente(CPF,Nome,Rua,CEP,Cidade,Pais,Email,Senha,Telefone1) VALUES('
 INSERT INTO Cliente(CPF,Nome,Rua,CEP,Cidade,Pais,Email,Senha,Telefone1) VALUES('06723742184','Giovanna Santos','Rua E, 3811','69904290','Florestina','Brasil','GSantos@yahoo.com','12345', '(64)7364-3418');
 INSERT INTO Cliente(CPF,Nome,Rua,CEP,Cidade,Pais,Email,Senha,Telefone1) VALUES('63328702229','Heitor Oliveira','Rua Bartolomeu Dias', '69909450','Josenópolis','Brasil','HOliveira@outlook.com','password','(34)0927-8375');
 INSERT INTO Cliente(CPF,Nome,Rua,CEP,Cidade,Pais,Email,Senha,Telefone1) VALUES('86883671080','Maria Eduarda Pereira','Rua Dália, 180','69910480','Livramento','Brasil','MEPereira@hotmail.com','123456', '(34)5628-4537');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> Stashed changes:Cliente.txt
