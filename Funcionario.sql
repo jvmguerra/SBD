@@ -1,3 +1,4 @@
+SET datestyle TO SQL, MDY;
 INSERT INTO Funcionario VALUES ('110','Alessandro Batista Maia','99781067',
 	'03/23/2014',160,1500.00,'84991176352','Rua Iracy Florêncio','55022756','Caruaru');
 INSERT INTO Funcionario VALUES ('111','Leandro Correia Couto','99981955',
