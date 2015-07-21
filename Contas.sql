@@ -1,0 +1,10 @@
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (10,'02/20/2015','03/10/2015','97831433449');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (30,'02/20/2015','03/10/2015','68220087218');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (40,'02/20/2015','03/10/2015','80757739261');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (40,'02/20/2015','03/10/2015','13356369865');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (50,'02/20/2015','03/10/2015','72578355789');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (70,'02/20/2015','03/10/2015','36538908292');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (100,'02/20/2015','03/10/2015','12285585829');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (120,'02/20/2015','03/10/2015','86529862153');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (200,'02/20/2015','03/10/2015','43058930100');
+INSERT INTO CONTA(valor,data_emissao,data_vencimento,cpf_cliente) VALUES (300,'02/20/2015','03/10/2015','82103582519');
