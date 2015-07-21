@@ -42,7 +42,7 @@ CREATE TABLE CLIENTE(
 	Plano_assinado integer,
 
 	CONSTRAINT cliente_pk PRIMARY KEY (CPF),
-	CONSTRAINT cliente_fk FOREIGN KEY (Plano_assinado) REFERENCES PLANO(Nro_plano)
+	CONSTRAINT cliente_fk FOREIGN KEY (Plano_assinado) REFERENCES PLANO(Nro_plano) ON DELETE CASCADE
 );
 CREATE SEQUENCE Id_conta_seq;
 CREATE TABLE CONTA(
@@ -83,7 +83,7 @@ CREATE TABLE FUNCIONARIO_TI(
 	Funcao varchar,
 
 	CONSTRAINT funcionario_ti_pk PRIMARY KEY (Cod_func),
-	CONSTRAINT funcionario_ti_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func)
+	CONSTRAINT funcionario_ti_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE
 );
 
 CREATE TABLE FUNCIONARIO_Engenharia(
@@ -91,7 +91,7 @@ CREATE TABLE FUNCIONARIO_Engenharia(
 	Area varchar,
 
 	CONSTRAINT funcionario_eng_pk PRIMARY KEY (Cod_func),
-	CONSTRAINT funcionario_eng_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func)
+	CONSTRAINT funcionario_eng_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE
 );
 
 CREATE TABLE FUNCIONARIO_RH(
@@ -99,7 +99,7 @@ CREATE TABLE FUNCIONARIO_RH(
 	Funcao varchar,
 
 	CONSTRAINT funcionario_rh_pk PRIMARY KEY (Cod_func),
-	CONSTRAINT funcionario_rh_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func)
+	CONSTRAINT funcionario_rh_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE
 );
 
 CREATE TABLE FUNCIONARIO_MANUTENCAO(
@@ -108,7 +108,7 @@ CREATE TABLE FUNCIONARIO_MANUTENCAO(
 	Funcao varchar,
 
 	CONSTRAINT funcionario_man_pk PRIMARY KEY (Cod_func),
-	CONSTRAINT funcionario_man_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func)
+	CONSTRAINT funcionario_man_fk FOREIGN KEY (Cod_func) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE
 );
 
 CREATE TABLE PAGAMENTO(
@@ -118,8 +118,8 @@ CREATE TABLE PAGAMENTO(
 	Esta_pago boolean,
 
 	CONSTRAINT pagamento_pk PRIMARY KEY (Cliente_cpf,Conta),
-	CONSTRAINT pagamento_fk1 FOREIGN KEY (Cliente_cpf) REFERENCES CLIENTE(CPF),
-	CONSTRAINT pagamento_fk2 FOREIGN KEY (Conta) REFERENCES CONTA(Id_conta)
+	CONSTRAINT pagamento_fk1 FOREIGN KEY (Cliente_cpf) REFERENCES CLIENTE(CPF) ON DELETE CASCADE,
+	CONSTRAINT pagamento_fk2 FOREIGN KEY (Conta) REFERENCES CONTA(Id_conta) ON DELETE CASCADE
 
 );
 
@@ -131,9 +131,9 @@ CREATE TABLE AGENDA_MANUTENCAO(
 	Funcionario_agendamento integer,
 
 	CONSTRAINT agendaman_pk PRIMARY KEY (Servico_id),
-	CONSTRAINT agendaman_fk1 FOREIGN KEY (Servico_id) REFERENCES SERVICO(Nro_Servico),
-	CONSTRAINT agendaman_fk2 FOREIGN KEY (Cliente_cpf) REFERENCES CLIENTE(CPF),
-	CONSTRAINT agendaman_fk3 FOREIGN KEY (Funcionario_agendamento) REFERENCES FUNCIONARIO(Cod_func) 
+	CONSTRAINT agendaman_fk1 FOREIGN KEY (Servico_id) REFERENCES SERVICO(Nro_Servico) ON DELETE CASCADE, 
+	CONSTRAINT agendaman_fk2 FOREIGN KEY (Cliente_cpf) REFERENCES CLIENTE(CPF) ON DELETE CASCADE,
+	CONSTRAINT agendaman_fk3 FOREIGN KEY (Funcionario_agendamento) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE 
 
 );
 
@@ -142,8 +142,8 @@ CREATE TABLE REALIZA (
 	Funcionario integer,
 
 	CONSTRAINT realiza_pk PRIMARY KEY (Servico_realizado,Funcionario),
-	CONSTRAINT realiza_fk1 FOREIGN KEY (Servico_realizado) REFERENCES Servico(Nro_servico),
-	CONSTRAINT realiza_fk2 FOREIGN KEY (Funcionario) REFERENCES FUNCIONARIO(Cod_func)
+	CONSTRAINT realiza_fk1 FOREIGN KEY (Servico_realizado) REFERENCES Servico(Nro_servico) ON DELETE CASCADE,
+	CONSTRAINT realiza_fk2 FOREIGN KEY (Funcionario) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE
 
 );
 
@@ -156,8 +156,8 @@ CREATE TABLE ASSINA(
 	Fixo_Numero varchar(15),
 	Movel_Numero varchar(15),
         CONSTRAINT assina_pk PRIMARY KEY (CPF_Cliente, Nro_Plano),
-	CONSTRAINT assina_fk FOREIGN KEY (CPF_Cliente) REFERENCES Cliente(CPF),
-	CONSTRAINT assina_fk1 FOREIGN KEY (Nro_plano) REFERENCES Plano(Nro_plano)
+	CONSTRAINT assina_fk FOREIGN KEY (CPF_Cliente) REFERENCES Cliente(CPF) ON DELETE CASCADE,
+	CONSTRAINT assina_fk1 FOREIGN KEY (Nro_plano) REFERENCES Plano(Nro_plano) ON DELETE CASCADE
 );
 
 ALTER TABLE PLANO ALTER COLUMN Movel_LimiteInternet SET DATA TYPE varchar(10);
