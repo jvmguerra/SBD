@@ -41,3 +41,29 @@ INSERT INTO Funcionario VALUES ('443','Danilo Fernando Lucas','99366617',
 	'05/24/2014',160,2000.00,'14495654330','Rua João Acquati','04160040','São Paulo');
 INSERT INTO Funcionario VALUES ('444','Yuri Renato Ian','99782115',
 	'09/16/2014',160,2000.00,'41463641249','Rua Botafogo','14704066','Bebedouro');
+	
+/* ESPECIALIZACOES */
+	
+INSERT INTO FUNCIONARIO_TI (Cod_func, Setor, Experiencia, Funcao) VALUES(110, 'TECH', 'Senior', 'Engenheiro de Software');
+INSERT INTO FUNCIONARIO_TI (Cod_func, Setor, Experiencia, Funcao) VALUES(111, 'TECH', 'Pleno', 'Analista de Sistemas');
+INSERT INTO FUNCIONARIO_TI (Cod_func, Setor, Experiencia, Funcao) VALUES(112, 'TECH', 'Junior', 'Desenvolvedor Web');
+INSERT INTO FUNCIONARIO_TI (Cod_func, Setor, Experiencia, Funcao) VALUES(113, 'DB', 'Senior', 'Administrador de Banco de Dados');
+INSERT INTO FUNCIONARIO_TI (Cod_func, Setor, Experiencia, Funcao) VALUES(114, 'SEC', 'Pleno', 'Chefe de Seguranca');
+
+INSERT INTO FUNCIONARIO_Engenharia(Cod_func, Area) VALUES (220, 'Engenharia Eletrica');
+INSERT INTO FUNCIONARIO_Engenharia(Cod_func, Area) VALUES (221, 'Engenharia de Telecomunicacoes');
+INSERT INTO FUNCIONARIO_Engenharia(Cod_func, Area) VALUES (222, 'Engenharia Eletronica');
+INSERT INTO FUNCIONARIO_Engenharia(Cod_func, Area) VALUES (223, 'Engenharia de Eletronica/Telecomunicacao');
+INSERT INTO FUNCIONARIO_Engenharia(Cod_func, Area) VALUES (224, 'Engenharia de Telecomunicaoes');
+
+INSERT INTO FUNCIONARIO_RH (Cod_func, Funcao) VALUES (330, 'Recrutamento');
+INSERT INTO FUNCIONARIO_RH (Cod_func, Funcao) VALUES (331, 'Gerente de RH');
+INSERT INTO FUNCIONARIO_RH (Cod_func, Funcao) VALUES (332, 'Recrutamento');
+INSERT INTO FUNCIONARIO_RH (Cod_func, Funcao) VALUES (333, 'Headhunting');
+INSERT INTO FUNCIONARIO_RH (Cod_func, Funcao) VALUES (334, 'Assessment');
+
+INSERT INTO FUNCIONARIO_MANUTENCAO (Cod_func, Setor, Funcao) VALUES (440, 'Manutencao', 'Instalacao Fisica');
+INSERT INTO FUNCIONARIO_MANUTENCAO (Cod_func, Setor, Funcao) VALUES (441, 'Manutencao', 'Reparos');
+INSERT INTO FUNCIONARIO_MANUTENCAO (Cod_func, Setor, Funcao) VALUES (442, 'Atendimento', 'Atendimento SAC');
+INSERT INTO FUNCIONARIO_MANUTENCAO (Cod_func, Setor, Funcao) VALUES (443, 'Atendimento', 'Atendimento SAC');
+INSERT INTO FUNCIONARIO_MANUTENCAO (Cod_func, Setor, Funcao) VALUES (444, 'Manutencao', 'Reparos');
