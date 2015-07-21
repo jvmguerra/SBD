@@ -25,7 +25,6 @@ CREATE TABLE EMPRESA(
 	Rua varchar(30) NOT NULL,
 	CEP varchar(10) NOT NULL,
 	Cidade varchar(15) NOT NULL,
-	Pais varchar(15) NOT NULL,
 	Telefone varchar(15) NOT NULL,
 
 	CONSTRAINT empresa_pk PRIMARY KEY (CNPJ)
@@ -36,7 +35,6 @@ CREATE TABLE CLIENTE(
 	Rua varchar(30) NOT NULL,
 	CEP varchar(10) NOT NULL,
 	Cidade varchar(15) NOT NULL,
-	Pais varchar(15) NOT NULL,
 	Email varchar(20) NOT NULL,
 	Senha varchar(10) NOT NULL,
 	Telefone1 varchar(15) NOT NULL,
@@ -65,7 +63,7 @@ CREATE TABLE SERVICO(
 );
 CREATE TABLE FUNCIONARIO(
 	Cod_func integer ,
-	Nome varchar(20) NOT NULL,
+	Nome varchar(50) NOT NULL,
 	Telefone varchar(15) NOT NULL,
 	Data_admissão date NOT NULL,
 	Carga_Horaria integer NOT NULL,
@@ -74,7 +72,6 @@ CREATE TABLE FUNCIONARIO(
 	Rua varchar(20) NOT NULL,
 	CEP varchar(10) NOT NULL,
 	Cidade varchar(15) NOT NULL,
-	Pais varchar(15) NOT NULL,
 
 	CONSTRAINT funcionario_pk PRIMARY KEY (Cod_func)
 ); 
