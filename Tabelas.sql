@@ -13,14 +13,14 @@ CREATE TABLE  PLANO (
 	Movel_Numero varchar(15),
 	Movel_Minutos integer,
 	Movel_LimiteSMS integer,
-	Movel_LimiteInternet integer,
-	Internet_Velocidade integer,
+	Movel_LimiteInternet varchar(10),
+	Internet_Velocidade varchar(10),
 	TV_Canais varchar(50),
 
 	CONSTRAINT plano_pk PRIMARY KEY (Nro_plano) 	
 );
 CREATE TABLE EMPRESA(
-	CNPJ varchar(15),
+	CNPJ varchar(20),
 	Nome varchar(20) NOT NULL,
 	Rua varchar(30) NOT NULL,
 	CEP varchar(10) NOT NULL,
@@ -30,16 +30,15 @@ CREATE TABLE EMPRESA(
 	CONSTRAINT empresa_pk PRIMARY KEY (CNPJ)
 );
 CREATE TABLE CLIENTE(
-	CPF varchar(11) ,
-	Nome varchar(20) NOT NULL,
+	CPF varchar(15) ,
+	Nome varchar(25) NOT NULL,
 	Rua varchar(30) NOT NULL,
 	CEP varchar(10) NOT NULL,
-	Cidade varchar(15) NOT NULL,
-	Email varchar(20) NOT NULL,
+	Cidade varchar(30) NOT NULL,
+	Email varchar(30) NOT NULL,
 	Senha varchar(10) NOT NULL,
 	Telefone1 varchar(15) NOT NULL,
 	Telefone2 varchar(15),
-	Plano_assinado integer,
 
 	CONSTRAINT cliente_pk PRIMARY KEY (CPF),
 	CONSTRAINT cliente_fk FOREIGN KEY (Plano_assinado) REFERENCES PLANO(Nro_plano) ON DELETE CASCADE
@@ -69,7 +68,7 @@ CREATE TABLE FUNCIONARIO(
 	Carga_Horaria integer NOT NULL,
 	Salario numeric NOT NULL,
 	CPF varchar(12) NOT NULL,
-	Rua varchar(20) NOT NULL,
+	Rua varchar(30) NOT NULL,
 	CEP varchar(10) NOT NULL,
 	Cidade varchar(15) NOT NULL,
 
@@ -132,7 +131,7 @@ CREATE TABLE AGENDA_MANUTENCAO(
 	Funcionario_agendamento integer,
 	Realizado boolean
 
-	CONSTRAINT agendaman_pk PRIMARY KEY (Nro_agendamento),
+	CONSTRAINT agendaman_pk PRIMARY KEY (Servico_id, Cliente_cpf),
 	CONSTRAINT agendaman_fk1 FOREIGN KEY (Servico_id) REFERENCES SERVICO(Nro_Servico) ON DELETE CASCADE, 
 	CONSTRAINT agendaman_fk2 FOREIGN KEY (Cliente_cpf) REFERENCES CLIENTE(CPF) ON DELETE CASCADE,
 	CONSTRAINT agendaman_fk3 FOREIGN KEY (Funcionario_agendamento) REFERENCES FUNCIONARIO(Cod_func) ON DELETE CASCADE 
@@ -171,18 +170,6 @@ CREATE TABLE DEPENDENTE(
 );
 
 
-ALTER TABLE PLANO ALTER COLUMN Movel_LimiteInternet SET DATA TYPE varchar(10);
-ALTER TABLE PLANO ALTER COLUMN internet_velocidade SET DATA TYPE varchar(10);
-ALTER TABLE EMPRESA ALTER COLUMN CNPJ SET DATA TYPE varchar(20);
-ALTER TABLE CLIENTE ALTER COLUMN NOME SET DATA TYPE varchar(25);
-ALTER TABLE CLIENTE ALTER COLUMN EMAIL SET DATA TYPE varchar(25);
-ALTER TABLE CLIENTE ALTER COLUMN CIDADE SET DATA TYPE varchar(20);
-ALTER TABLE FUNCIONARIO ALTER COLUMN RUA SET DATA TYPE varchar(30);
-ALTER TABLE FUNCIONARIO ALTER COLUMN NOME SET DATA TYPE varchar(50);
-ALTER TABLE CLIENTE DROP COLUMN plano_assinado;
-ALTER TABLE AGENDA_MANUTENCAO DROP CONSTRAINT agendaman_pk;
-ALTER TABLE AGENDA_MANUTENCAO ADD CONSTRAINT agendaman_pk PRIMARY KEY (Servico_id, Cliente_cpf);
-ALTER TABLE CONTA ADD COLUMN Cpf_cliente varchar(15);
 
 
 
