@@ -123,8 +123,6 @@ CREATE TABLE PAGAMENTO(
 
 );
 CREATE SEQUENCE Nro_agendamento_seq;
-CREATE TABLE SERVICO(
-	Nro_servico integer DEFAULT nextval('Nro_servico_seq'),
 CREATE TABLE AGENDA_MANUTENCAO(
 	Nro_agendamento integer DEFAULT nextval('Nro_agendamento_seq'),
 	Servico_id integer,
