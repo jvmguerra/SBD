@@ -1,11 +1,23 @@
 # vai adicionando as consultas que voces escreverem e as proximas a serem criadas
 1-Quantidade de dependentes de um funcionario
+	SELECT f.nome,count(*)
+		FROM funcionario f, dependente d
+		WHERE f.cod_func=d.cod_func
+		GROUP BY f.nome
 2-Quantidade de servicos pendentes
-	select servico_id,cliente_cpf
-		from agenda_manutencao a
-		where a.data_concretizacao = null
+	SELECT count(*) as Servicos_pendentes
+		FROM agenda_manutencao a
+		WHERE a.data_concretizacao = NULL
 3-Visao com informações de contato dos clientes
 	select nome,email,telefone1 from cliente
 4-Consulta que mostram as contas a serem pagas
-
-5-
+	SELECT cl.CPF, Cl.nome, p.conta, c.valor, c.data_emissao, c.Data_vencimento 
+		FROM Conta c, Pagamento p, Cliente Cl 
+		WHERE p.esta_pago = False AND
+		      cl.cpf = p.Cliente_cpf AND 
+		      c.Id_conta = p.conta
+5-Qual funcionario está responsável por qual servico
+	select Nome,tipo as Servico
+		from realiza r, funcionario f, servico s
+		where r.servico_realizado = s.nro_servico and
+	    	  r.funcionario = f.cod_func
