@@ -32,3 +32,9 @@
        		(select count(*) from funcionario_engenharia) as quantidade_engenharia,
        		(select count(*) from funcionario_rh) as quantidade_rh,
        		(select count(*) from funcionario_ti) as quantidade_ti
+8-Mostra informações detalhadas sobre pedidos que nao foram realizados ainda
+	select c.Nome,c.cpf,s.tipo,a.data_agendamento
+		from cliente c, servico s, agenda_manutencao a
+		where s.nro_servico =  a.servico_id and
+	     	  c.cpf = a.cliente_cpf and
+	    	  a.realizado = false
