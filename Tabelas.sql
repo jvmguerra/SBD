@@ -130,6 +130,7 @@ CREATE TABLE AGENDA_MANUTENCAO(
 	Data_agendamento date,
 	Data_concretizacao date,
 	Funcionario_agendamento integer,
+	Realizado boolean
 
 	CONSTRAINT agendaman_pk PRIMARY KEY (Nro_agendamento),
 	CONSTRAINT agendaman_fk1 FOREIGN KEY (Servico_id) REFERENCES SERVICO(Nro_Servico) ON DELETE CASCADE, 
