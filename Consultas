@@ -18,12 +18,12 @@
 		      cl.cpf = p.Cliente_cpf AND 
 		      c.Id_conta = p.conta
 5-Qual funcionario está responsável por qual servico
-	select Nome,tipo as Servico
-		from realiza r, funcionario f, servico s
-		where r.servico_realizado = s.nro_servico and
+	SELECT Nome,tipo as Servico
+		FROM realiza r, funcionario f, servico s
+		WHERE r.servico_realizado = s.nro_servico and
 	    	  r.funcionario = f.cod_func
 6-Quantidade recebida de contas pagas.	
 	select sum(c.valor) as Valor_recebido
-		from conta c, pagamento p
-		where p.conta = c.id_conta and
+		FROM conta c, pagamento p
+		WHERE p.conta = c.id_conta and
 		      p.esta_pago = true
