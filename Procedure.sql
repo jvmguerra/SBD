@@ -1,3 +1,9 @@
+/*
+	A ideia do nosso stored procedure é de fazer uma verificação nas datas de vencimento das contas. Caso ele
+	encontre alguma conta que está vencida ele aplica um juros de 7% no valor da conta. Para cada tupla no resultado
+	da seleção executada que retorna os dados do cliente e da conta que ainda nao foi paga o procedure vai verificar
+	as datas de vencimento caso a data de vencimento seja menor que a data atual ele aplica o juros.
+*/
 CREATE OR REPLACE FUNCTION checa_vencimento ()
 RETURNS VOID AS $$
 DECLARE tupla record;
