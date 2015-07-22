@@ -161,6 +161,15 @@ CREATE TABLE ASSINA(
 	CONSTRAINT assina_fk1 FOREIGN KEY (Nro_plano) REFERENCES Plano(Nro_plano) ON DELETE CASCADE
 );
 
+CREATE TABLE DEPENDENTE(
+		cod_func integer,
+		nome varchar(25),
+		grau varchar(25),
+        CONSTRAINT depende_pk PRIMARY KEY (cod_func,nome),
+	CONSTRAINT depende_fk FOREIGN KEY (cod_func) REFERENCES Funcionario(cod_func)
+);
+
+
 ALTER TABLE PLANO ALTER COLUMN Movel_LimiteInternet SET DATA TYPE varchar(10);
 ALTER TABLE PLANO ALTER COLUMN internet_velocidade SET DATA TYPE varchar(10);
 ALTER TABLE EMPRESA ALTER COLUMN CNPJ SET DATA TYPE varchar(20);
