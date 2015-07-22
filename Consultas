@@ -1,0 +1,11 @@
+# vai adicionando as consultas que voces escreverem e as proximas a serem criadas
+1-Quantidade de dependentes de um funcionario
+2-Quantidade de servicos pendentes
+	select servico_id,cliente_cpf
+		from agenda_manutencao a
+		where a.data_concretizacao = null
+3-Visao com informações de contato dos clientes
+	select nome,email,telefone1 from cliente
+4-Consulta que mostram as contas a serem pagas
+
+5-
