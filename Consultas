@@ -7,7 +7,7 @@
 2-Quantidade de servicos pendentes
 	SELECT count(*) as Servicos_pendentes
 		FROM agenda_manutencao a
-		WHERE a.data_concretizacao = NULL
+		WHERE a.realizado = false
 3-Visao com informações de contato dos clientes
 	SELECT nome,email,telefone1 
 		FROM cliente
