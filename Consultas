@@ -9,7 +9,8 @@
 		FROM agenda_manutencao a
 		WHERE a.data_concretizacao = NULL
 3-Visao com informações de contato dos clientes
-	select nome,email,telefone1 from cliente
+	SELECT nome,email,telefone1 
+		FROM cliente
 4-Consulta que mostram as contas a serem pagas
 	SELECT cl.CPF, Cl.nome, p.conta, c.valor, c.data_emissao, c.Data_vencimento 
 		FROM Conta c, Pagamento p, Cliente Cl 
