@@ -27,3 +27,8 @@
 		FROM conta c, pagamento p
 		WHERE p.conta = c.id_conta and
 		      p.esta_pago = true
+7-Quantidade de funcionarios por setor
+	select  (select count(*) from funcionario_manutencao) as quantidade_manutencao,
+       		(select count(*) from funcionario_engenharia) as quantidade_engenharia,
+       		(select count(*) from funcionario_rh) as quantidade_rh,
+       		(select count(*) from funcionario_ti) as quantidade_ti
