@@ -22,3 +22,8 @@
 		from realiza r, funcionario f, servico s
 		where r.servico_realizado = s.nro_servico and
 	    	  r.funcionario = f.cod_func
+6-Quantidade recebida de contas pagas.	
+	select sum(c.valor) as Valor_recebido
+		from conta c, pagamento p
+		where p.conta = c.id_conta and
+		      p.esta_pago = true
